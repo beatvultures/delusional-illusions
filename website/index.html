@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delusional Illusions — Custom Press-On Nail Art | Missoula, MT</title>
+  <meta name="description" content="Custom press-on nail art by Sage Grace. Professional-grade designs, made locally in Missoula, without salon prices. Ready-made, custom, and event sets.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════
+       DESIGN TOKENS
+       ═══════════════════════════════════ */
+    :root {
+      --color-primary: #8B5CF6;
+      --color-secondary: #1A1A2E;
+      --color-accent: #EC4899;
+      --color-accent-2: #C4B5FD;
+      --color-bg: #1E1B2E;
+      --color-surface: #2D2B55;
+      --color-text: #F5F3FF;
+      --color-text-muted: #A78BFA;
+      --color-highlight: #F59E0B;
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-accent: 'Cormorant Garamond', Georgia, serif;
+      --radius: 8px;
+      --radius-lg: 16px;
+    }
+
+    /* ═══════════════════════════════════
+       RESET & BASE
+       ═══════════════════════════════════ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-weight: 400;
+      color: var(--color-text);
+      background-color: var(--color-bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--color-accent-2);
+    }
+
+    /* ═══════════════════════════════════
+       NAV
+       ═══════════════════════════════════ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(30, 27, 46, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+    }
+
+    nav .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--color-text);
+      letter-spacing: -0.02em;
+    }
+
+    nav .logo span {
+      color: var(--color-primary);
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    nav .nav-links a {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    nav .nav-links a:hover {
+      color: var(--color-text);
+    }
+
+    nav .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.25rem;
+    }
+
+    nav .nav-toggle svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-text);
+    }
+
+    @media (max-width: 768px) {
+      nav .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(30, 27, 46, 0.98);
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+        gap: 0.75rem;
+        border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+      }
+
+      nav .nav-links.open {
+        display: flex;
+      }
+
+      nav .nav-toggle {
+        display: block;
+      }
+    }
+
+    /* ═══════════════════════════════════
+       HERO
+       ═══════════════════════════════════ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 1.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(139, 92, 246, 0.15), transparent 70%),
+                  radial-gradient(ellipse at 80% 20%, rgba(236, 72, 153, 0.08), transparent 50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 .accent {
+      color: var(--color-primary);
+    }
+
+    .hero .tagline {
+      font-family: var(--font-accent);
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero .cta-button {
+      display: inline-block;
+      background: var(--color-accent);
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 0.85rem 2.25rem;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+
+    .hero .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(236, 72, 153, 0.35);
+      color: #fff;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+      opacity: 0.4;
+    }
+
+    .scroll-hint svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--color-text-muted);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ═══════════════════════════════════
+       SECTIONS (shared)
+       ═══════════════════════════════════ */
+    section {
+      padding: 5rem 1.5rem;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      font-family: var(--font-accent);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--color-text-muted);
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    /* ═══════════════════════════════════
+       PORTFOLIO
+       ═══════════════════════════════════ */
+    .portfolio {
+      background: var(--color-secondary);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 900px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0, 0, 0, 0.92);
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: var(--radius-lg);
+      object-fit: contain;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .lightbox-close svg {
+      width: 32px;
+      height: 32px;
+      stroke: var(--color-text);
+      opacity: 0.7;
+    }
+
+    .lightbox-close:hover svg {
+      opacity: 1;
+    }
+
+    /* ═══════════════════════════════════
+       PACKAGES
+       ═══════════════════════════════════ */
+    .packages {
+      background: var(--color-bg);
+    }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .package-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border: 1px solid rgba(196, 181, 253, 0.1);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .package-card:hover {
+      border-color: rgba(196, 181, 253, 0.25);
+    }
+
+    .package-card.featured {
+      border-color: var(--color-primary);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(139, 92, 246, 0.2);
+    }
+
+    .package-card .badge {
+      display: inline-block;
+      background: var(--color-primary);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .package-card h3 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .package-card .price {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--color-highlight);
+      margin-bottom: 1.25rem;
+    }
+
+    .package-card .price span {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--color-text-muted);
+    }
+
+    .package-card ul {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 1.5rem;
+    }
+
+    .package-card ul li {
+      font-size: 0.9rem;
+      padding: 0.35rem 0;
+      color: var(--color-text);
+      position: relative;
+      padding-left: 1.25rem;
+    }
+
+    .package-card ul li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent-2);
+      font-size: 0.75rem;
+    }
+
+    .package-card .order-btn {
+      display: inline-block;
+      background: transparent;
+      color: var(--color-accent);
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 0.6rem 1.5rem;
+      border: 1.5px solid var(--color-accent);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      text-decoration: none;
+    }
+
+    .package-card .order-btn:hover {
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .package-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    }
+
+    /* ═══════════════════════════════════
+       HOW IT WORKS
+       ═══════════════════════════════════ */
+    .process {
+      background: var(--color-secondary);
+    }
+
+    .step-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      counter-reset: step;
+    }
+
+    .step {
+      counter-increment: step;
+      position: relative;
+      padding-left: 3.5rem;
+    }
+
+    .step::before {
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--color-text-muted);
+      opacity: 0.5;
+      line-height: 1;
+    }
+
+    .step h4 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .step p {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .step-list {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    /* ═══════════════════════════════════
+       FAQ
+       ═══════════════════════════════════ */
+    .faq {
+      background: var(--color-bg);
+    }
+
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(196, 181, 253, 0.1);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--color-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 1.25rem 0;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .faq-question:hover {
+      color: var(--color-accent-2);
+    }
+
+    .faq-question .chevron {
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+
+    .faq-question .chevron svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+    }
+
+    .faq-item.open .faq-question .chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+
+    .faq-answer p {
+      padding-bottom: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════
+       ORDER CTA
+       ═══════════════════════════════════ */
+    .order-cta {
+      background: var(--color-accent);
+      text-align: center;
+      padding: 5rem 1.5rem;
+    }
+
+    .order-cta h2 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .order-cta p {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 2rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .order-cta .cta-dark {
+      display: inline-block;
+      background: var(--color-secondary);
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding: 0.9rem 2.5rem;
+      border-radius: var(--radius);
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+
+    .order-cta .cta-dark:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+      color: #fff;
+    }
+
+    /* ═══════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════ */
+    footer {
+      background: var(--color-secondary);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      border-top: 1px solid rgba(139, 92, 246, 0.1);
+    }
+
+    footer .footer-brand {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--color-text);
+      margin-bottom: 0.75rem;
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    footer .footer-links a {
+      color: var(--color-text-muted);
+      font-size: 0.875rem;
+    }
+
+    footer .footer-links a:hover {
+      color: var(--color-text);
+    }
+
+    footer .disclaimer {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      opacity: 0.6;
+      margin-bottom: 0.5rem;
+    }
+
+    footer .footer-loc {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+    }
+
+    /* ═══════════════════════════════════
+       ANIMATIONS (scroll reveal)
+       ═══════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════ NAV ═══════ -->
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">Delusional <span>Illusions</span></div>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#order">Order</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════ HERO ═══════ -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Custom Nail Art.<br><span class="accent">Made in Missoula.</span></h1>
+      <p class="tagline">Professional-grade press-on nail sets — without the salon prices or the appointment stress.</p>
+      <a href="#order" class="cta-button">Order a Custom Set</a>
+    </div>
+    <div class="scroll-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </div>
+  </section>
+
+  <!-- ═══════ PORTFOLIO ═══════ -->
+  <section class="portfolio" id="portfolio">
+    <div class="section-inner">
+      <h2 class="section-title reveal">The Work</h2>
+      <p class="section-subtitle reveal">Every set is handmade. Every design is one of a kind.</p>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="photos/IMG000_(0).jpg" alt="Nail art set 1" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="photos/IMG001_(0).jpg" alt="Nail art set 2" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="photos/IMG002_(0).jpg" alt="Nail art set 3" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="photos/IMG003_(0).jpg" alt="Nail art set 4" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="photos/IMG004_(0).jpg" alt="Nail art set 5" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="photos/IMG005_(0).jpg" alt="Nail art set 6" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="photos/IMG006_(0).jpg" alt="Nail art set 7" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="photos/IMG007_(0).jpg" alt="Nail art set 8" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="photos/IMG008_(0).jpg" alt="Nail art set 9" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="photos/IMG009_(0).jpg" alt="Nail art set 10" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="photos/IMG000_(1).jpg" alt="Nail art set 11" loading="lazy"></div>
+        <div class="gallery-item" onclick="openLightbox(this)"><img src="photos/IMG001_(1).jpg" alt="Nail art set 12" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ LIGHTBOX ═══════ -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <img id="lightbox-img" src="" alt="Full size nail art">
+  </div>
+
+  <!-- ═══════ PACKAGES ═══════ -->
+  <section class="packages" id="packages">
+    <div class="section-inner">
+      <h2 class="section-title reveal">Packages</h2>
+      <p class="section-subtitle reveal">From ready-to-wear to fully custom — there's a set for every vibe.</p>
+      <div class="package-grid reveal">
+        <div class="package-card">
+          <h3>Ready-Made Set</h3>
+          <div class="price">$25 <span>per set</span></div>
+          <ul>
+            <li>Pre-designed styles</li>
+            <li>Quick turnaround</li>
+            <li>Fast, a bit of style</li>
+          </ul>
+          <a href="#order" class="order-btn">Get This Set</a>
+        </div>
+        <div class="package-card featured">
+          <div class="badge">Most Popular</div>
+          <h3>Custom Art Set</h3>
+          <div class="price">$40 <span>per set</span></div>
+          <ul>
+            <li>Your design, your vision</li>
+            <li>Custom colors & patterns</li>
+            <li>The sweet spot</li>
+          </ul>
+          <a href="#order" class="order-btn">Get This Set</a>
+        </div>
+        <div class="package-card">
+          <h3>Event Custom Set</h3>
+          <div class="price">$60 <span>per set</span></div>
+          <ul>
+            <li>High-detail, high-stakes</li>
+            <li>Perfect for prom, weddings</li>
+            <li>Priority turnaround</li>
+          </ul>
+          <a href="#order" class="order-btn">Get This Set</a>
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:1.5rem; font-size:0.85rem; color:var(--color-text-muted);" class="reveal">
+        Also available: Sizing Kit $5 (credited toward first order) · Rush Order +$15 · Elite/Bridal starts at $75
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════ HOW IT WORKS ═══════ -->
+  <section class="process" id="how-it-works">
+    <div class="section-inner">
+      <h2 class="section-title reveal">How It Works</h2>
+      <p class="section-subtitle reveal">From idea to your hands — six simple steps.</p>
+      <div class="step-list reveal">
+        <div class="step">
+          <h4>Request</h4>
+          <p>DM us on Instagram or send your idea. Tell us your style, colors, and event date.</p>
+        </div>
+        <div class="step">
+          <h4>Sizing</h4>
+          <p>Grab a $5 sizing kit or send us your measurements so the fit is perfect.</p>
+        </div>
+        <div class="step">
+          <h4>Quote</h4>
+          <p>We'll send you a price based on your package and design complexity.</p>
+        </div>
+        <div class="step">
+          <h4>Deposit</h4>
+          <p>Secure your spot with a deposit via Venmo or CashApp.</p>
+        </div>
+        <div class="step">
+          <h4>Paint</h4>
+          <p>Sage hand-paints your custom set. Turnaround is typically 3–5 days.</p>
+        </div>
+        <div class="step">
+          <h4>Pickup</h4>
+          <p>Grab your set at a public pickup spot in Missoula. Easy and safe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FAQ ═══════ -->
+  <section class="faq" id="faq">
+    <div class="section-inner">
+      <h2 class="section-title reveal">FAQ</h2>
+      <p class="section-subtitle reveal">Got questions? Here's the rundown.</p>
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            What are press-on nails?
+            <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>Press-on nails are custom-made artificial nails that you apply yourself with adhesive. They look like a professional manicure but you can put them on at home — no salon appointment needed.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            How long do they last?
+            <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>With proper application, press-ons can last 1–2 weeks. Using a good nail glue and prepping your natural nails makes a big difference. We include application tips with every order.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Can I reuse a set?
+            <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>Yes! If you carefully remove them (warm water soak or twist-and-pull method), you can reapply them with fresh glue. Most sets can be worn 2–3 times with care.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            How do I know my size?
+            <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>Order our $5 sizing kit — it includes all the nail sizes so you can find your perfect fit. The $5 is credited toward your first order, so it's basically free.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Do you ship?
+            <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>Right now we're local pickup only in Missoula, MT. If you're outside the area, DM us and we'll figure something out.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+            Are you a licensed salon?
+            <span class="chevron"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>No. Delusional Illusions sells press-on nail art sets — we are not a salon and do not provide hands-on nail services. These are custom art pieces you apply yourself.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ ORDER CTA ═══════ -->
+  <section class="order-cta" id="order">
+    <h2>Ready for Your Set?</h2>
+    <p>DM us on Instagram with your idea and let's make it real.</p>
+    <a href="https://instagram.com/delusionalillusionz" target="_blank" rel="noopener" class="cta-dark">DM on Instagram →</a>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer>
+    <div class="footer-brand">Delusional Illusions</div>
+    <div class="footer-links">
+      <a href="https://instagram.com/delusionalillusionz" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:delusionalillusions06@gmail.com">Email</a>
+    </div>
+    <p class="disclaimer">Press-on nail art sets only — not a licensed salon service.</p>
+    <p class="footer-loc">Made in Missoula, MT ✦ by Sage Grace</p>
+  </footer>
+
+  <!-- ═══════ SCRIPTS ═══════ -->
+  <script>
+    // Lightbox
+    function openLightbox(el) {
+      const img = el.querySelector('img');
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Close mobile nav on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('open');
+      });
+    });
+  </script>
+
+</body>
+</html>

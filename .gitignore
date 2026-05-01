@@ -1,0 +1,5 @@
+# Vault working files (not for deployment)
+Pictures/
+analyze_both_folders.py
+extract_colors.py
+color_analysis_results.json
